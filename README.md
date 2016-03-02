@@ -12,11 +12,15 @@
 >* Too fast to live，too young to die
 
 
-***网址链接
-[](https://www.baidu.com/)
+**** 网址链接
 
 
-***超萌三胞胎
+[baidu](https://www.baidu.com/)
+
+
+**** 超萌三胞胎(动图加载时间长)
+
+
 ![](http://img4.duitang.com/uploads/item/201503/31/20150331151337_dGZBA.gif)
 
 
