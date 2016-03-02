@@ -11,7 +11,7 @@
 
 >* Too fast to live，too young to die
 
-![]（http://imgsrc.baidu.com/forum/pic/item/b3606699a9014c0825a085850e7b02087bf4f438.jpg）
+![](http://imgsrc.baidu.com/forum/pic/item/b3606699a9014c0825a085850e7b02087bf4f438.jpg)
 
 
 
