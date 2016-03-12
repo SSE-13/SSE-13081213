@@ -132,12 +132,12 @@ text2.word = '与QQ好友一起玩';
 
 
 var bitmap = new Bitmap();
-bitmap.source = '0.jpg';
+bitmap.source = 'icon.jpg';
 
 //渲染队列
 var renderQueue = [bitmap,rect1,rect2, text1,text2];
 //资源加载列表
-var imageList = ['0.jpg'];
+var imageList = ['icon.jpg'];
 
 //先加载资源，加载成功之后执行渲染队列
 loadResource(imageList, function() {
