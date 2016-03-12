@@ -59,11 +59,13 @@ class Rect extends DisplayObject {
 }
 
 class TextField extends DisplayObject {
+    
+    word = 'HELLO';
 
     render(context: CanvasRenderingContext2D) {
-        context.font = "20px Arial";
-        context.fillStyle = '#000000';
-        context.fillText('HelloWorld', 0, 20);
+        context.font = "17px Arial";
+        context.fillStyle = '#ffffff';
+        context.fillText(this.word, 0, 20);
     }
 }
 
@@ -103,30 +105,39 @@ var canvas: HTMLCanvasElement = document.getElementById("game") as HTMLCanvasEle
 var context = canvas.getContext("2d");
 
 
-var rect = new Rect();
-rect.width = 200;
-rect.height = 100;
-rect.color = '#00FF00'
-
+var rect1 = new Rect();
+rect1.width = 160;
+rect1.height = 40;
+rect1.x = 80;
+rect1.y = 268;
+rect1.color = '#7baa3a'
 
 var rect2 = new Rect();
-rect2.width = 300;
-rect2.height = 50;
-rect2.x = 200;
-rect2.y = 200;
-rect2.rotation = Math.PI / 8;
-rect2.color = '#00FFFF'
+rect2.width = 160;
+rect2.height = 40;
+rect2.x = 265;
+rect2.y = 268;
+rect2.color = '#548bde'
 
-var text = new TextField();
-text.x = 10;
+
+var text1 = new TextField();
+text1.x = 90;
+text1.y = 273;
+text1.word = '与微信好友一起玩';
+
+var text2 = new TextField();
+text2.x = 275;
+text2.y = 273;
+text2.word = '与QQ好友一起玩';
+
 
 var bitmap = new Bitmap();
-bitmap.source = 'wander-icon.jpg';
+bitmap.source = '0.jpg';
 
 //渲染队列
-var renderQueue = [rect, rect2, text,bitmap];
+var renderQueue = [bitmap,rect1,rect2, text1,text2];
 //资源加载列表
-var imageList = ['wander-icon.jpg'];
+var imageList = ['0.jpg'];
 
 //先加载资源，加载成功之后执行渲染队列
 loadResource(imageList, function() {
