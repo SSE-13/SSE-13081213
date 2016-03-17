@@ -11,7 +11,7 @@ const BOUNDS_RIGHT = 400;
 
 const BOUNCE = 0.95;
 
-const Friction = 2;
+const Friction = 0.1;
 
 /**
  * 计时器系统
@@ -65,26 +65,26 @@ class Body {
         this.x += duringTime * this.vx;
         this.y += duringTime * this.vy;
 
-        //反弹
+
+        //反弹和摩擦
         if (this.y + this.height > BOUNDS_BOTTOM) {
             this.vy = -BOUNCE * this.vy;
+            this.y = 300;
+            
+            if (this.vx > 0) {
+                this.vx -= Friction;
+            }
+            if (this.vx < 0) {
+                this.vx += Friction;
+            }
         }
 
-        //右越界反弹
-        if (this.x + this.width > BOUNDS_RIGHT) {
+
+        //左右越界反弹
+        if ((this.x + this.width > BOUNDS_RIGHT) || (this.x < BOUNDS_LEFT)) {
             this.vx = -BOUNCE * this.vx;
         }
-        
-        //左越界反弹
-        if (this.x < BOUNDS_LEFT) {
-            this.vx = -BOUNCE * this.vx;
-        }
-        
-        //运动停止
-        
-        
-        
-        
+      
 
 
         //根据物体位置更新显示对象属性
