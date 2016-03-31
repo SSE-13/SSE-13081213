@@ -30,8 +30,12 @@ var render;
                 this.globalMatrix = localMatrix;
             }
             else {
-                var parentGlobalMatrix = parent.globalMatrix;
-                this.globalMatrix = localMatrix.prepend(parentGlobalMatrix.a, parentGlobalMatrix.b, parentGlobalMatrix.c, parentGlobalMatrix.d, parentGlobalMatrix.tx, parentGlobalMatrix.ty);
+                this.globalMatrix.a = (localMatrix.a * parent.globalMatrix.a) + (localMatrix.b * parent.globalMatrix.c);
+                this.globalMatrix.b = (localMatrix.a * parent.globalMatrix.b) + (localMatrix.b * parent.globalMatrix.d);
+                this.globalMatrix.c = (localMatrix.c * parent.globalMatrix.a) + (localMatrix.d * parent.globalMatrix.c);
+                this.globalMatrix.d = (localMatrix.c * parent.globalMatrix.b) + (localMatrix.d * parent.globalMatrix.d);
+                this.globalMatrix.tx = (localMatrix.tx * parent.globalMatrix.a) + (localMatrix.ty * parent.globalMatrix.c) + parent.globalMatrix.tx;
+                this.globalMatrix.ty = (localMatrix.tx * parent.globalMatrix.b) + (localMatrix.ty * parent.globalMatrix.d) + parent.globalMatrix.ty;
             }
             context.setTransform(this.globalMatrix.a, this.globalMatrix.b, this.globalMatrix.c, this.globalMatrix.d, this.globalMatrix.tx, this.globalMatrix.ty);
             this.render(context);
