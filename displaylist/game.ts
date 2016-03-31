@@ -45,7 +45,6 @@ bag.addChild(left_leg);
 bag.addChild(right_leg);
 
 
-
 var renderCore = new render.RenderCore();
 renderCore.start(humanContainer, ["head.png","body.png","left_arm.png","right_arm.png","left_leg.png","right_leg.png"]);
 
