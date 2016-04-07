@@ -49,7 +49,6 @@ var renderCore = new render.RenderCore();
 renderCore.start(humanContainer, ["head.png","body.png","left_arm.png","right_arm.png","left_leg.png","right_leg.png"]);
 
 
-
 class HumanBody extends Body {
     
     vx:number = 5;
@@ -73,7 +72,7 @@ var eventCore = new events.EventCore();
 eventCore.init();
 
 var headHitTest = (localPoint:math.Point,displayObject:render.DisplayObject) =>{
-
+    //alert (`点击位置为${localPoint.x},${localPoint.y}`);
     if((localPoint.x >= 0)&&(localPoint.x <= 237)&&(localPoint.y >= 0)&&(localPoint.y <= 237))
         return true;  
     else
@@ -100,17 +99,7 @@ var legOnClick = () =>{
     body.vx = body.r = 0;
     body.rotation = 0;
 }
+
 eventCore.register(head,headHitTest,headOnClick);
 eventCore.register(left_leg,legHitTest,legOnClick);
 eventCore.register(right_leg,legHitTest,legOnClick);
-
-
-
-
-
-
-
-
-
-
-
