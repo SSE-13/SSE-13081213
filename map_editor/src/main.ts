@@ -38,7 +38,6 @@ function createMapEditor() {
 }
 
 
-
 function onTileClick(tile: editor.Tile) {
     console.log(tile);
 }
